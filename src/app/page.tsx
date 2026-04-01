@@ -6,7 +6,7 @@ import { ArrowRight, Zap, Shield, MessageSquare, Sparkles, ChevronRight } from "
 import { PLANS } from "@/lib/constants";
 
 export default function LandingPage() {
-  const { isSignedIn } = useAuth();
+  const isSignedIn = true;
 
   return (
     <div style={{ minHeight: "100vh", background: "var(--background)" }}>

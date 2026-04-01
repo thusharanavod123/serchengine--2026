@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useUser } from "@clerk/nextjs";
-import { UserButton } from "@clerk/nextjs";
 import { User, Palette, Bell, Shield, Trash2, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
@@ -15,7 +13,7 @@ const SECTIONS = [
 ];
 
 export default function SettingsPage() {
-    const { user } = useUser();
+    const user = { fullName: "Guest User", primaryEmailAddress: { emailAddress: "guest@example.com" } };
     const [activeSection, setActiveSection] = useState("profile");
 
     return (
@@ -54,7 +52,7 @@ export default function SettingsPage() {
                         <p style={{ color: "var(--text-muted)", marginBottom: "2rem", fontSize: "0.875rem" }}>Manage your account information.</p>
 
                         <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: "2rem" }}>
-                            <UserButton />
+                            <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--accent)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.9rem", fontWeight: "bold" }}>G</div>
                             <div>
                                 <p style={{ fontWeight: 600 }}>{user?.fullName || "No name set"}</p>
                                 <p style={{ color: "var(--text-muted)", fontSize: "0.875rem" }}>{user?.primaryEmailAddress?.emailAddress}</p>

@@ -36,7 +36,7 @@ async function* simulateStream(prompt: string): AsyncGenerator<string> {
 }
 
 export default function ChatPage({ conversationId }: { conversationId?: string }) {
-    const { user } = useUser();
+    const user = { firstName: "Guest" };
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState("");
     const [isStreaming, setIsStreaming] = useState(false);

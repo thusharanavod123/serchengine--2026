@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useUser, UserButton } from "@clerk/nextjs";
 import {
     Sparkles, Plus, MessageSquare, Settings, CreditCard,
     ChevronDown, Trash2
@@ -18,7 +17,7 @@ const mockConversations = [
 ];
 
 export default function Sidebar() {
-    const { user } = useUser();
+    const user = { fullName: "Guest User", firstName: "Guest" };
     const pathname = usePathname();
     const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
 
@@ -112,7 +111,7 @@ export default function Sidebar() {
                     padding: "0.5rem 0.5rem", borderRadius: "8px",
                     background: "var(--surface-2)", border: "1px solid var(--border)"
                 }}>
-                    <UserButton />
+                    <div style={{ width: 28, height: 28, borderRadius: "50%", background: "var(--accent)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem", fontWeight: "bold" }}>G</div>
                     <div style={{ overflow: "hidden", flex: 1 }}>
                         <p style={{ fontSize: "0.82rem", fontWeight: 500, color: "var(--text-primary)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             {user?.fullName || user?.firstName || "User"}
