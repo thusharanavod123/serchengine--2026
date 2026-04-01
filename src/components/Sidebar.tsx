@@ -112,7 +112,7 @@ export default function Sidebar() {
                     padding: "0.5rem 0.5rem", borderRadius: "8px",
                     background: "var(--surface-2)", border: "1px solid var(--border)"
                 }}>
-                    <UserButton afterSignOutUrl="/" />
+                    <UserButton />
                     <div style={{ overflow: "hidden", flex: 1 }}>
                         <p style={{ fontSize: "0.82rem", fontWeight: 500, color: "var(--text-primary)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             {user?.fullName || user?.firstName || "User"}
